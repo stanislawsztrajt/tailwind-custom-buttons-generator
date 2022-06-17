@@ -4,7 +4,8 @@
     "paths": {
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@api/*": ["pages/api/*"]
+      "@api/*": ["pages/api/*"],
+      "@types/*": ["types/*"]
     },
     "allowJs": true,
     "allowUnreachableCode": false,
@@ -25,7 +26,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2018"
+    "target": "es2018",
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

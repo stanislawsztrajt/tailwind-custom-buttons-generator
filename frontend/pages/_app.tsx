@@ -1,9 +1,15 @@
-import '../styles/globals.css'
-import React from 'react'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import React from "react";
+import type { AppProps } from "next/app";
+import Navigation from "components/Navigation";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Navigation />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
