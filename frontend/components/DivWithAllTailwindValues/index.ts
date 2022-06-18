@@ -1,1 +1,1 @@
-export { default } from './DivWithAllTailwindValues'
+export { default } from "./DivWithAllTailwindValues";

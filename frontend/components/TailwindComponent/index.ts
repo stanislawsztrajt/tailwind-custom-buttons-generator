@@ -1,1 +1,1 @@
-export { default } from './TailwindComponent'
+export { default } from "./TailwindComponent";

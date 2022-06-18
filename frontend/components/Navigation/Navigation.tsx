@@ -3,14 +3,14 @@ import Link from "next/link";
 
 const Navigation: VFC = () => {
   return (
-    <nav className="bg-white shadow dark:bg-gray-800 w-full absolute">
+    <nav className="w-full bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-3 mx-auto md:flex">
         <div className="flex items-center justify-between">
           <div>
             <Link href="/">
-              <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+              <a className="flex items-center mb-4 font-medium text-white title-font md:mb-0">
                 <svg
-                  className="w-10 h-10 bg-purple-800 text-white p-2 rounded-full"
+                  className="w-10 h-10 p-2 text-white bg-purple-800 rounded-full"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -26,7 +26,7 @@ const Navigation: VFC = () => {
                   <polyline points="3.27 6.96 12 12.01 20.73 6.96" />{" "}
                   <line x1="12" y1="22.08" x2="12" y2="12" />
                 </svg>
-                <span className="ml-3 text-xl">Tailwind&nbsp;comps&nbsp;generator</span>
+                <span className="ml-3 text-xl">Tailwind&nbsp;button&nbsp;generator</span>
               </a>
             </Link>
           </div>
@@ -48,23 +48,15 @@ const Navigation: VFC = () => {
 
         <div className="w-full md:flex md:items-center md:justify-between">
           <div className="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0">
-            <a
-              href="#"
-              className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-            >
-              Home
+            <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
+              <Link href="/">Home</Link>
             </a>
-            <a
-              href="#"
-              className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-            >
-              About
+            <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
+              <Link href="/contact">Contact</Link>
             </a>
-            <a
-              href="#"
-              className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-            >
-              Contact
+
+            <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
+              <Link href="/button-generator">Create button</Link>
             </a>
           </div>
 

@@ -1,43 +1,53 @@
-import React, { VFC, ChangeEvent } from 'react'
+import React, { VFC, ChangeEvent } from "react";
 
-import { getValueObjectByStringKey } from 'helpers/component';
-import { Icomponent, ItailwindValue, ItailwindValueObject } from 'types/interfaces';
+import { getValueObjectByStringKey } from "helpers/component";
+import { IclassName, ItailwindValue, ItailwindValueObject } from "types/interfaces";
+
+import tailwindValuesJSON from "data/tailwindValues.json";
 
 interface Props {
-  // tailwindValues in the props, because I may be expanding the app
-  tailwindValues: ItailwindValue[];
-  component: Icomponent;
+  defaultValueComponent: IclassName;
   generateNewValue: (key: string, value: string) => void;
 }
 
-const TailwindOptions: VFC<Props> = ({ tailwindValues, component, generateNewValue }) =>{
-  const tailwindOptions = tailwindValues.map((tailwindValue: ItailwindValue) => {
-    const tailwindValueObject: ItailwindValueObject = getValueObjectByStringKey(tailwindValue.key, component.defaultValue);
-    const valuesMap = tailwindValue.values.map((value, index) => {
+const tailwindValues: ItailwindValue[] = Object.values(tailwindValuesJSON).map((tailwindValue) => {
+  return tailwindValue;
+});
+
+const TailwindOptions: VFC<Props> = ({ defaultValueComponent, generateNewValue }) => {
+  console.log("tailwind options");
+  const tailwindOptions = tailwindValues.map(({ key, prefix, values }: ItailwindValue) => {
+    const tailwindValueObject: ItailwindValueObject = getValueObjectByStringKey(
+      key,
+      defaultValueComponent
+    );
+    const valuesMap = values.map((value, index) => {
       return (
-        <option 
-          key={index + tailwindValue.prefix} 
-          value={`{ "prefix": "${tailwindValue.prefix}", "value": "${value}" }`}
-          selected={tailwindValueObject.value === value}
+        <option
+          key={index + prefix}
+          className="rounded"
+          value={`{ "prefix": "${prefix}", "value": "${value}" }`}
         >
-          {`${tailwindValue.prefix}${value}`}
+          {`${prefix}${value}`}
         </option>
       );
     });
 
-
     return (
       <select
-        className=""
-        key={tailwindValue.key}
-        onChange={(event: ChangeEvent<HTMLSelectElement>) => generateNewValue(tailwindValue.key, event.target.value)}
+        className="w-full mt-1 text-base lg:w-2/3"
+        key={key + prefix}
+        defaultValue={`{ "prefix": "${tailwindValueObject.prefix}", "value": "${tailwindValueObject.value}" }`}
+        onChange={(event: ChangeEvent<HTMLSelectElement>) =>
+          generateNewValue(key, event.target.value)
+        }
       >
-        { valuesMap }
+        {valuesMap}
       </select>
     );
   });
 
-  return <>{tailwindOptions}</>
-}
+  return <>{tailwindOptions}</>;
+};
 
-export default TailwindOptions
+export default TailwindOptions;

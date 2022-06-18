@@ -1,1 +1,1 @@
-export { default } from './TailwindOptions'
+export { default } from "./TailwindOptions";

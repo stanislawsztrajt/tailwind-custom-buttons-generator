@@ -1994,7 +1994,7 @@
   "durationValues": {
     "key": "duration",
     "prefix": "duration-",
-    "values": ["75", "100", "150", "200", "300", "500", "700", "1000"]
+    "values": ["0", "75", "100", "150", "200", "300", "500", "700", "1000"]
   },
   "borderValues": {
     "key": "border",
