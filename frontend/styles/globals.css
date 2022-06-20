@@ -31,5 +31,5 @@ body::-webkit-scrollbar-thumb {
 }
 
 .copy-button {
-  @apply w-full lg:w-auto px-6 py-3 font-medium duration-100 rounded-md cursor-pointer hover:opacity-80;
+  @apply w-full px-6 py-3 font-medium duration-100 rounded-md cursor-pointer lg:w-auto hover:opacity-80;
 }

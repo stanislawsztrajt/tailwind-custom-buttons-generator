@@ -8,24 +8,26 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "name": {
       "type": "string",
       "required": true,
-      "maxLength": 100000
+      "maxLength": 200,
+      "minLength": 5
     },
     "description": {
       "type": "text",
       "required": true,
-      "maxLength": 100000
+      "maxLength": 1000,
+      "minLength": 10
     },
     "code": {
       "type": "text",
       "required": true,
-      "maxLength": 1000000
+      "maxLength": 10000
     },
     "defaultValue": {
       "type": "json",

@@ -1,7 +1,10 @@
-import React, { VFC } from "react";
+import React, { ChangeEvent, VFC } from "react";
 import Link from "next/link";
+import useNavigation from "./Navigation.hook";
 
 const Navigation: VFC = () => {
+  const { setSearchInputValue } = useNavigation();
+
   return (
     <nav className="w-full bg-white shadow dark:bg-gray-800">
       <div className="container px-6 py-3 mx-auto md:flex">
@@ -48,16 +51,22 @@ const Navigation: VFC = () => {
 
         <div className="w-full md:flex md:items-center md:justify-between">
           <div className="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0">
-            <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
-              <Link href="/">Home</Link>
-            </a>
-            <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
-              <Link href="/contact">Contact</Link>
-            </a>
+            <Link href="/">
+              <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
+                Home
+              </a>
+            </Link>
+            <Link href="/contact">
+              <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
+                Contact
+              </a>
+            </Link>
 
-            <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
-              <Link href="/button-generator">Create button</Link>
-            </a>
+            <Link href="/button-generator">
+              <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
+                Create button
+              </a>
+            </Link>
           </div>
 
           <div className="relative">
@@ -77,6 +86,10 @@ const Navigation: VFC = () => {
               type="text"
               className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
               placeholder="Search"
+              onClick={() => console.log("change")}
+              onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                setSearchInputValue(event.target.value)
+              }
             />
           </div>
         </div>

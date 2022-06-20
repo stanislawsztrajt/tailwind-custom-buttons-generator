@@ -1,7 +1,6 @@
 import React, { VFC } from "react";
 
 const DivWithAllTailwindValues: VFC = () => {
-  console.log("tailwind all options");
   return (
     <div
       className="

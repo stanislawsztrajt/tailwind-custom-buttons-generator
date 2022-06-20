@@ -4,18 +4,18 @@ import useCopyButtons from "./CopyButtons.hook";
 
 interface Props {
   classList?: string;
-  customClassList: string;
-  text: string;
+  customClassList?: string;
+  text?: string;
 }
 
 const CopyButtons: VFC<Props> = ({ classList, customClassList, text }) => {
   const { copyClassList } = useCopyButtons();
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 mt-2 lg:mt-10 lg:flex-row">
+    <div className="flex flex-col items-center justify-center p-4 text-white lg:mt-10 lg:flex-row">
       <button
         onClick={() => copyClassList(`${classList} ${customClassList}`)}
-        className="bg-yellow-500 copy-button"
+        className="mt-2 bg-yellow-500 copy-button"
       >
         copy only class w-40 bg-...
       </button>

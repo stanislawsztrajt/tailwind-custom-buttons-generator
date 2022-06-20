@@ -49,6 +49,29 @@ export interface IcomponentResponse {
   };
 }
 
+export interface IcomponentsVariables {
+  limit: number;
+}
+
+export interface componentId {
+  id: string;
+}
+
+export interface IcomponentsIdsResponse {
+  components: {
+    data: componentId[];
+  };
+}
+
+export interface IcomponentsResponse {
+  components: {
+    data: {
+      id: string;
+      attributes: Icomponent;
+    }[];
+  };
+}
+
 export interface ItailwindValue {
   prefix: string;
   key: string;

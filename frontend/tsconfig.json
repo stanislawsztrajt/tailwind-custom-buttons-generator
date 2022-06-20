@@ -5,6 +5,7 @@
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
       "@api/*": ["pages/api/*"],
+      "@queries/*": ["pages/api/queries/*"],
       "@types/*": ["types/*"]
     },
     "allowJs": true,

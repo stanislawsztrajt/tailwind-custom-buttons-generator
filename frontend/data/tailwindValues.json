@@ -2000,7 +2000,7 @@
     "key": "border",
     "prefix": "border",
     "values": [
-      "none",
+      "-none",
       "",
       "-0",
       "-2",

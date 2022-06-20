@@ -15,7 +15,6 @@ const tailwindValues: ItailwindValue[] = Object.values(tailwindValuesJSON).map((
 });
 
 const TailwindOptions: VFC<Props> = ({ defaultValueComponent, generateNewValue }) => {
-  console.log("tailwind options");
   const tailwindOptions = tailwindValues.map(({ key, prefix, values }: ItailwindValue) => {
     const tailwindValueObject: ItailwindValueObject = getValueObjectByStringKey(
       key,
