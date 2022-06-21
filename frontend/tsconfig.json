@@ -2,11 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["components/*"],
+      "@features/*": ["features/*"],
+      "@ui/*": ["features/ui/*"],
       "@pages/*": ["pages/*"],
       "@api/*": ["pages/api/*"],
       "@queries/*": ["pages/api/queries/*"],
-      "@types/*": ["types/*"]
+      "@types/*": ["types/*"],
+      "@interfaces/*": ["types/interfaces"],
+      "@hooks/*": ["hooks/*"],
     },
     "allowJs": true,
     "allowUnreachableCode": false,

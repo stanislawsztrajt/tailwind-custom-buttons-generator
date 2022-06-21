@@ -88,54 +88,6 @@
       "9xl"
     ]
   },
-  "paddingYValues": {
-    "prefix": "py-",
-    "key": "paddingY",
-    "values": [
-      "0",
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "8",
-      "10",
-      "12",
-      "16",
-      "20",
-      "24",
-      "32",
-      "40",
-      "48",
-      "56",
-      "64"
-    ]
-  },
-  "paddingXValues": {
-    "prefix": "px-",
-    "key": "paddingX",
-    "values": [
-      "0",
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "8",
-      "10",
-      "12",
-      "16",
-      "20",
-      "24",
-      "32",
-      "40",
-      "48",
-      "56",
-      "64"
-    ]
-  },
   "textColorValues": {
     "prefix": "text-",
     "key": "textColor",
@@ -243,6 +195,69 @@
       "purple-50",
       "red-50",
       "yellow-50"
+    ]
+  },
+  "fontType": {
+    "prefix": "font-",
+    "key": "font",
+    "values": [
+      "hairline",
+      "thin",
+      "light",
+      "normal",
+      "medium",
+      "semibold",
+      "bold",
+      "extrabold",
+      "black"
+    ]
+  },
+  "paddingYValues": {
+    "prefix": "py-",
+    "key": "paddingY",
+    "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "8",
+      "10",
+      "12",
+      "16",
+      "20",
+      "24",
+      "32",
+      "40",
+      "48",
+      "56",
+      "64"
+    ]
+  },
+  "paddingXValues": {
+    "prefix": "px-",
+    "key": "paddingX",
+    "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "8",
+      "10",
+      "12",
+      "16",
+      "20",
+      "24",
+      "32",
+      "40",
+      "48",
+      "56",
+      "64"
     ]
   },
   "backgroundColorValues": {
@@ -2145,6 +2160,19 @@
       "inherit",
       "current",
       "transparent"
+    ]
+  },
+  "cursor": {
+    "prefix": "cursor-",
+    "key": "cursor",
+    "values": [
+      "auto",
+      "default",
+      "move",
+      "pointer",
+      "text",
+      "wait",
+      "not-allowed"
     ]
   }
 }

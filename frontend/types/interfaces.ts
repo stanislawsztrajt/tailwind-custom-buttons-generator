@@ -31,43 +31,68 @@ export interface IclassName {
     prefix: string;
     value: string;
   };
+  hover: {
+    prefix: string;
+    value: string;
+  };
+  duration: {
+    prefix: string;
+    value: string;
+  };
+  border: {
+    prefix: string;
+    value: string;
+  };
+  borderColor: {
+    prefix: string;
+    value: string;
+  };
+  borderType: {
+    prefix: string;
+    value: string;
+  };
 }
 
-export interface Icomponent {
+export interface IcustomButton {
   name: string;
-  description: string;
+  description?: string;
   code: string;
   defaultValue: IclassName;
 }
 
-export interface IcomponentResponse {
-  component: {
+export interface IcustomButtonResponse {
+  customButton: {
     data: {
       id: string;
-      attributes: Icomponent;
+      attributes: IcustomButton;
     };
   };
 }
 
-export interface IcomponentsVariables {
+export interface IcustomButtonsVariables {
   limit: number;
 }
 
-export interface componentId {
-  id: string;
-}
-
-export interface IcomponentsIdsResponse {
-  components: {
-    data: componentId[];
+export interface IcustomButtonsIdsResponse {
+  customButtons: {
+    data: {
+      id: string
+    }[]
   };
 }
 
-export interface IcomponentsResponse {
-  components: {
+export interface IcustomButtonsResponse {
+  customButtons: {
     data: {
       id: string;
-      attributes: Icomponent;
+      attributes: {
+        id: string;
+        attributes: {
+          name: string;
+          description: string;
+          code: string;
+        };
+      };
     }[];
   };
 }
