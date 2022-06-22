@@ -29,7 +29,7 @@ const Button: NextPage<Props> = ({ code, defaultValue }: Props) => {
           setIsCustomButtonBoxThemeDark={setIsCustomButtonBoxThemeDark}
         />
       </div>
-      <section className="flex flex-col-reverse items-center justify-center w-full gap-8 p-4 mt-20 2xl:w-3/4 2xl:flex-row 2xl:h-2/3">
+      <section className="flex flex-col-reverse items-center justify-center w-full h-auto gap-8 p-4 mt-20 2xl:w-3/4 2xl:flex-row 2xl:h-2/3">
         {/* live view */}
         <div
           className={`flex bg-black flex-col items-center justify-center w-full p-2 2xl:w-1/2 h-screen 2xl:h-full ${
@@ -47,7 +47,7 @@ const Button: NextPage<Props> = ({ code, defaultValue }: Props) => {
         </div>
       </section>
 
-      <CopyButtons customClassList={classList} text={text} />
+      <CopyButtons classList={classList} text={text} />
     </div>
   );
 };

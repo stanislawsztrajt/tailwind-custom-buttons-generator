@@ -5,13 +5,14 @@ import type { AppProps } from "next/app";
 import { ApolloProvider } from "@apollo/client";
 import client from "@api/apollo-client";
 
-import Header from '@ui/header'
+import { Header, Footer } from '@features/ui'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </ApolloProvider>
   );
 }

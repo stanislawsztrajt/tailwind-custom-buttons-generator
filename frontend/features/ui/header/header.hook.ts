@@ -1,21 +1,34 @@
 import { useEffect, useCallback, useState } from "react";
 import { debounce } from "lodash";
+import { useRouter } from "next/router";
+
+type serachInputType = string | undefined
 
 const useHeader = () => {
-  const [searchInputValue, setSearchInputValue] = useState<string>("");
+  const router = useRouter();
+  
+  const [isMenuToggle, toggleMenu] = useState<boolean>(false);
+  const [searchInputValue, setSearchInputValue] = useState<serachInputType>(undefined);
 
-  const searchButtons = (value: string) => {
-    console.log("searching with debounce", value);
+  const searchButtons = (value: serachInputType) => {
+    if(value === '')
+      router.push('/')
+    else
+      router.push(`/buttons-search-result/${value}`);
   };
 
-  const debouncedSearchButtons = useCallback(debounce(searchButtons, 500), []);
+  const debouncedSearchButtons = useCallback(debounce(searchButtons, 2000), []);
 
   useEffect(() => {
-    debouncedSearchButtons(searchInputValue);
+    if(searchInputValue !== undefined)
+      debouncedSearchButtons(searchInputValue);
   }, [searchInputValue]);
+
 
   return {
     setSearchInputValue,
+    isMenuToggle,
+    toggleMenu
   };
 };
 

@@ -86,12 +86,9 @@ export interface IcustomButtonsResponse {
     data: {
       id: string;
       attributes: {
-        id: string;
-        attributes: {
-          name: string;
-          description: string;
-          code: string;
-        };
+        name: string;
+        description: string;
+        code: string;
       };
     }[];
   };
@@ -106,4 +103,15 @@ export interface ItailwindValue {
 export interface ItailwindValueObject {
   prefix: string;
   value: string;
+}
+
+export interface IcustomButtonsListProps {
+  customButtons: {
+    id: string;
+    attributes: {
+      name: string;
+      description: string;
+      code: string;
+    };
+  }[] | undefined;
 }

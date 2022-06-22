@@ -33,7 +33,7 @@ const CustomButtonGenerator: NextPage<Props> = ({ defaultValue, code, name }: Pr
   } = useCustomButtonGenerator(defaultValue);
 
   return (
-    <div className="flex flex-col items-center w-full h-screen -mt-4 text-white">
+    <div className="flex flex-col items-center w-full -mt-4 text-white 2xl:h-screen">
       <div className="flex flex-col-reverse items-center justify-center w-full gap-8 p-4 mt-20 2xl:w-3/4 2xl:flex-row 2xl:h-3/4">
         {/* live view */}
         <section

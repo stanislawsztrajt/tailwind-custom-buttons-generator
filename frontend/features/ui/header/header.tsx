@@ -4,15 +4,15 @@ import Link from "next/link";
 import useHeader from "./header.hook";
 
 const Header: VFC = () => {
-  const { setSearchInputValue } = useHeader();
+  const { setSearchInputValue, isMenuToggle, toggleMenu } = useHeader();
 
   return (
-    <nav className="w-full bg-white shadow dark:bg-gray-800">
-      <div className="container px-6 py-3 mx-auto md:flex">
+    <nav className="w-full bg-gray-800 shadow">
+      <div className="container px-6 py-3 mx-auto lg:flex">
         <div className="flex items-center justify-between">
           <div>
             <Link href="/">
-              <a className="flex items-center mb-4 font-medium text-white title-font md:mb-0">
+              <a className="flex items-center mb-4 font-medium text-white title-font lg:mb-0">
                 <svg
                   className="w-10 h-10 p-2 text-white bg-purple-800 rounded-full"
                   viewBox="0 0 24 24"
@@ -30,13 +30,14 @@ const Header: VFC = () => {
                   <polyline points="3.27 6.96 12 12.01 20.73 6.96" />{" "}
                   <line x1="12" y1="22.08" x2="12" y2="12" />
                 </svg>
-                <span className="ml-3 text-xl">Tailwind&nbsp;button&nbsp;generator</span>
+                <span className="ml-3 text-lg">Tailwind&nbsp;button&nbsp;generator</span>
               </a>
             </Link>
           </div>
-          <div className="flex md:hidden">
+          <div className="flex lg:hidden">
             <button
               type="button"
+              onClick={() => toggleMenu(!isMenuToggle)}
               className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
               aria-label="toggle menu"
             >
@@ -50,28 +51,33 @@ const Header: VFC = () => {
           </div>
         </div>
 
-        <div className="w-full md:flex md:items-center md:justify-between">
-          <div className="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0">
-            <Link href="/">
-              <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
-                Home
-              </a>
-            </Link>
-            <Link href="/about">
-              <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
-                About
-              </a>
-            </Link>
-
-            <Link href="/custom-button-generator">
-              <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2">
-                Create custom button
-              </a>
-            </Link>
+        <div className={`text-right ${isMenuToggle ? 'h-40' : 'h-0' } px-2 lg:h-auto overflow-hidden duration-300 w-full lg:flex lg:items-center lg:justify-between `}>
+          <div className="flex flex-col px-2 py-3 -mx-4 lg:flex-row lg:mx-0 lg:py-0">
+            <div>
+              <Link href="/">
+                <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 lg:mx-2">
+                  Home
+                </a>
+              </Link>
+            </div>
+            <div className="mt-1 lg:mt-0">
+              <Link href="/about">
+                <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 lg:mx-2">
+                  About
+                </a>
+              </Link>
+            </div>
+            <div className="mt-1 lg:mt-0">
+              <Link href="/custom-button-generator">
+                <a className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 lg:mx-2">
+                  Create custom button
+                </a>
+              </Link>
+            </div>
           </div>
 
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
+            <span className="absolute inset-y-0 left-0 flex items-center pl-3" >
               <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
@@ -85,9 +91,8 @@ const Header: VFC = () => {
 
             <input
               type="text"
-              className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+              className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
               placeholder="Search"
-              onClick={() => console.log("change")}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
                 setSearchInputValue(event.target.value)
               }

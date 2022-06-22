@@ -70,6 +70,28 @@ export const GET_CUSTOM_BUTTONS_IDS = gql`
   }
 `;
 
+export const GET_CUSTOM_BUTTONS_BY_SEARCH_VALUE = gql`
+  query SearchCustomButtonsBySearchValue($searchValue: String!) {
+    customButtons(
+      filters: {
+        or: [
+          { name: { contains: $searchValue } }
+          { description: { contains: $searchValue } }
+        ]
+      }
+    ) {
+      data {
+        id
+        attributes {
+          name
+          description
+          code
+        }
+      }
+    }
+  }
+`
+
 export const CREATE_CUSTOM_BUTTON = gql`
   mutation createCustomButton(
     $name: String!
