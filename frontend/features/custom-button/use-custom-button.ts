@@ -15,7 +15,7 @@ interface IcreateCustomButtonResponse {
   };
 }
 
-const useCustomButtonGenerator = (defaultValue: IclassName) => {
+const useCustomButton = (defaultValue: IclassName) => {
   const router: NextRouter = useRouter();
 
   const [text, setText] = useState<string>();
@@ -135,4 +135,4 @@ const useCustomButtonGenerator = (defaultValue: IclassName) => {
   };
 };
 
-export default useCustomButtonGenerator;
+export default useCustomButton;

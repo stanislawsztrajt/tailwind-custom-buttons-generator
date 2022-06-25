@@ -76,8 +76,8 @@ export interface IcustomButtonsVariables {
 export interface IcustomButtonsIdsResponse {
   customButtons: {
     data: {
-      id: string
-    }[]
+      id: string;
+    }[];
   };
 }
 
@@ -106,12 +106,14 @@ export interface ItailwindValueObject {
 }
 
 export interface IcustomButtonsListProps {
-  customButtons: {
-    id: string;
-    attributes: {
-      name: string;
-      description: string;
-      code: string;
-    };
-  }[] | undefined;
+  customButtons:
+    | {
+        id: string;
+        attributes: {
+          name: string;
+          description: string;
+          code: string;
+        };
+      }[]
+    | undefined;
 }

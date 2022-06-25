@@ -7,14 +7,17 @@ import { GET_CUSTOM_BUTTON_GENERATOR } from "@queries/custom-button";
 import { IcustomButton, IcustomButtonResponse } from "types/interfaces";
 
 import { DEFAULT_CUSTOM_BUTTON_ID } from "constants/index";
-import useCustomButtonGenerator from "@hooks/useCustomButtonGenerator";
 
-import { ButtonBoxThemeButtons, CopyButtons } from '@features/custom-button'
-import { CustomButton, DivWithAllTailwindValues, TailwindOptions } from '@features/custom-button/custom-button-generator'
+import { ButtonBoxThemeButtons, CopyButtons, useCustomButton } from "@features/custom-button";
+import {
+  CustomButton,
+  DivWithAllTailwindValues,
+  TailwindOptions,
+} from "@features/custom-button/custom-button-generator";
 
 const boxShadowStyles = { boxShadow: "0 0 2em rgb(30, 58, 138)" };
 
-type Props = IcustomButton
+type Props = IcustomButton;
 
 const MemeoizedTailwindOptions = memo(TailwindOptions);
 const MemoizedDivWithAllTailwindValues = memo(DivWithAllTailwindValues);
@@ -30,7 +33,7 @@ const CustomButtonGenerator: NextPage<Props> = ({ defaultValue, code, name }: Pr
     setIsCustomButtonBoxThemeDark,
     generateNewValue,
     postCustomButton,
-  } = useCustomButtonGenerator(defaultValue);
+  } = useCustomButton(defaultValue);
 
   return (
     <div className="flex flex-col items-center w-full -mt-4 text-white 2xl:h-screen">
@@ -68,6 +71,7 @@ const CustomButtonGenerator: NextPage<Props> = ({ defaultValue, code, name }: Pr
               <input
                 type="text"
                 placeholder="Click on me!"
+                id="custom-button-value"
                 maxLength={50}
                 className="w-full p-1 duration-200 border-2 rounded outline-none lg:w-1/2 focus:border-blue-500"
                 value={text}
@@ -79,6 +83,7 @@ const CustomButtonGenerator: NextPage<Props> = ({ defaultValue, code, name }: Pr
               <div className="font-medium text-white">Custom classes</div>
               <input
                 type="text"
+                id="custom-button-custom-class"
                 placeholder="focus:border-red-500 bg..."
                 maxLength={750}
                 className="w-full p-1 duration-200 border-2 rounded outline-none lg:w-1/2 focus:border-blue-500"
@@ -103,6 +108,7 @@ const CustomButtonGenerator: NextPage<Props> = ({ defaultValue, code, name }: Pr
       <button
         style={boxShadowStyles}
         onClick={postCustomButton}
+        id="post-custom-button-button"
         className="fixed z-50 flex items-center justify-center px-8 py-3 text-lg font-semibold text-white transition duration-150 bg-blue-900 rounded-lg cursor-pointer bottom-2 right-2 sm:bottom-4 sm:right-4 md:bottom-10 md:right-10 hover:bg-blue-800"
       >
         <svg

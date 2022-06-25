@@ -2165,14 +2165,6 @@
   "cursor": {
     "prefix": "cursor-",
     "key": "cursor",
-    "values": [
-      "auto",
-      "default",
-      "move",
-      "pointer",
-      "text",
-      "wait",
-      "not-allowed"
-    ]
+    "values": ["auto", "default", "move", "pointer", "text", "wait", "not-allowed"]
   }
 }

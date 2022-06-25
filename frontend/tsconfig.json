@@ -9,7 +9,7 @@
       "@queries/*": ["pages/api/queries/*"],
       "@types/*": ["types/*"],
       "@interfaces/*": ["types/interfaces"],
-      "@hooks/*": ["hooks/*"],
+      "@hooks/*": ["hooks/*"]
     },
     "allowJs": true,
     "allowUnreachableCode": false,

@@ -7,7 +7,7 @@ const Header: VFC = () => {
   const { setSearchInputValue, isMenuToggle, toggleMenu } = useHeader();
 
   return (
-    <nav className="w-full bg-gray-800 shadow">
+    <nav id="header" className="w-full bg-gray-800 shadow">
       <div className="container px-6 py-3 mx-auto lg:flex">
         <div className="flex items-center justify-between">
           <div>
@@ -51,7 +51,11 @@ const Header: VFC = () => {
           </div>
         </div>
 
-        <div className={`text-right ${isMenuToggle ? 'h-40' : 'h-0' } px-2 lg:h-auto overflow-hidden duration-300 w-full lg:flex lg:items-center lg:justify-between `}>
+        <div
+          className={`text-right ${
+            isMenuToggle ? "h-40" : "h-0"
+          } px-2 lg:h-auto overflow-hidden duration-300 w-full lg:flex lg:items-center lg:justify-between `}
+        >
           <div className="flex flex-col px-2 py-3 -mx-4 lg:flex-row lg:mx-0 lg:py-0">
             <div>
               <Link href="/">
@@ -77,7 +81,7 @@ const Header: VFC = () => {
           </div>
 
           <div className="relative">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-3" >
+            <span className="absolute inset-y-0 left-0 flex items-center pl-3">
               <svg className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
@@ -88,9 +92,9 @@ const Header: VFC = () => {
                 ></path>
               </svg>
             </span>
-
             <input
               type="text"
+              id="header-input-search"
               className="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
               placeholder="Search"
               onChange={(event: ChangeEvent<HTMLInputElement>) =>

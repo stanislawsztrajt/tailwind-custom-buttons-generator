@@ -7,7 +7,7 @@ import { getValueObjectByStringKey } from "helpers/custom-button";
 
 interface Props {
   defaultValue: IclassName;
-  generateNewValue: (key: string, value: string) => void
+  generateNewValue: (key: string, value: string) => void;
 }
 
 const tailwindValues: ItailwindValue[] = Object.values(tailwindValuesJSON).map((tailwindValue) => {
@@ -16,11 +16,8 @@ const tailwindValues: ItailwindValue[] = Object.values(tailwindValuesJSON).map((
 
 const TailwindOptions: VFC<Props> = ({ defaultValue, generateNewValue }) => {
   const tailwindOptions = tailwindValues.map(({ key, prefix, values }: ItailwindValue) => {
-    const tailwindValueObject: ItailwindValueObject = getValueObjectByStringKey(
-      key,
-      defaultValue
-    );
-    
+    const tailwindValueObject: ItailwindValueObject = getValueObjectByStringKey(key, defaultValue);
+
     const valuesMap = values.map((value, index) => {
       return (
         <option
@@ -36,6 +33,7 @@ const TailwindOptions: VFC<Props> = ({ defaultValue, generateNewValue }) => {
     return (
       <select
         className="w-full mt-1 text-base lg:w-2/3"
+        id={`${prefix === "w-" ? "tailwind-options-select" : null}`}
         key={key + prefix}
         defaultValue={`{ "prefix": "${tailwindValueObject.prefix}", "value": "${tailwindValueObject.value}" }`}
         onChange={(event: ChangeEvent<HTMLSelectElement>) =>

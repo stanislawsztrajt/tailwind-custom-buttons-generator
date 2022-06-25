@@ -11,15 +11,14 @@ import {
   IcustomButtonsVariables,
 } from "types/interfaces";
 
-import useCustomButtonGenerator from "@hooks/useCustomButtonGenerator";
 
-import { ButtonBoxThemeButtons, CopyButtons } from "@features/custom-button";
+import { ButtonBoxThemeButtons, CopyButtons, useCustomButton } from "@features/custom-button";
 
 type Props = IcustomButton;
 
 const Button: NextPage<Props> = ({ code, defaultValue }: Props) => {
   const { text, classList, isCustomButtonBoxThemeDark, setIsCustomButtonBoxThemeDark } =
-    useCustomButtonGenerator(defaultValue);
+    useCustomButton(defaultValue);
 
   return (
     <div className="flex flex-col items-center w-full h-screen -mt-4 text-white">

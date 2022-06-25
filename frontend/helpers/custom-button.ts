@@ -4,4 +4,3 @@ export const getValueObjectByStringKey: returnGetValueObjectByStringKey = (part,
   Object.entries(object).find(([key]) => {
     return key.startsWith(part);
   })?.[1];
-
